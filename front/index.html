@@ -1,19 +1,170 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="theme-color" content="#f5f7fb">
+    <meta name="description" content="Gérez et consultez facilement votre catalogue d’articles.">
+    <title>Catalogue — Atelier</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    
+    <div class="app-shell">
+        <aside class="sidebar" aria-label="Navigation principale">
+            <a class="brand" href="#" aria-label="Atelier, accueil">
+                <span class="brand-mark" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none"><path d="M4 7.5 12 3l8 4.5v9L12 21l-8-4.5v-9Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="m4.5 7.7 7.5 4.4 7.5-4.4M12 12v8.5" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+                </span>
+                <span class="brand-name">atelier<span>.</span></span>
+            </a>
 
+            <div class="nav-caption">ESPACE DE TRAVAIL</div>
+            <nav class="main-nav" aria-label="Navigation de l’espace">
+                <a class="nav-link active" href="#catalogue" aria-current="page">
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="4" width="6.5" height="6.5" rx="1.5" stroke="currentColor" stroke-width="1.7"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.5" stroke="currentColor" stroke-width="1.7"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.5" stroke="currentColor" stroke-width="1.7"/><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1.5" stroke="currentColor" stroke-width="1.7"/></svg>
+                    <span>Catalogue</span>
+                    <span class="nav-count" id="nav-count">—</span>
+                </a>
+            </nav>
 
+            <div class="sidebar-bottom">
+                <div class="help-card">
+                    <span class="help-icon" aria-hidden="true">?</span>
+                    <div>
+                        <strong>Un coup de main ?</strong>
+                        <span>Votre espace de gestion</span>
+                    </div>
+                </div>
+                <div class="profile">
+                    <div class="avatar" aria-hidden="true">A</div>
+                    <div class="profile-copy">
+                        <strong>Mon espace</strong>
+                        <span>Gestionnaire</span>
+                    </div>
+                    <span class="profile-menu" aria-hidden="true">···</span>
+                </div>
+            </div>
+        </aside>
 
+        <main class="main-content" id="catalogue">
+            <header class="topbar">
+                <nav class="breadcrumb" aria-label="Fil d’Ariane">
+                    <span>Espace de travail</span>
+                    <span class="breadcrumb-separator" aria-hidden="true">/</span>
+                    <strong aria-current="page">Catalogue</strong>
+                </nav>
+                <div class="topbar-right">
+                    <span class="today" id="today"></span>
+                    <span class="top-avatar" role="img" aria-label="Profil de l’espace">A</span>
+                </div>
+            </header>
 
+            <section class="page-content">
+                <header class="page-heading">
+                    <div>
+                        <div class="eyebrow"><span class="eyebrow-dot"></span> VOTRE ACTIVITÉ</div>
+                        <h1>Catalogue</h1>
+                        <p class="page-subtitle">Retrouvez et gérez tous vos articles au même endroit.</p>
+                    </header>
+                    <button class="button button-primary" id="open-form" type="button">
+                        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                        Ajouter un article
+                    </button>
+                </div>
 
+                <div class="stats-grid" aria-label="Résumé du catalogue">
+                    <article class="stat-card">
+                        <div class="stat-top"><span class="stat-label">Articles au catalogue</span><span class="stat-icon icon-purple" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none"><path d="m12 3 8 4.5v9L12 21l-8-4.5v-9L12 3Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="m4.5 7.7 7.5 4.4 7.5-4.4M12 12v9" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+                        </span></div>
+                        <div class="stat-value" id="total-items">—</div>
+                        <div class="stat-foot"><span class="stat-foot-dot purple-dot"></span> Articles enregistrés</div>
+                    </article>
+                    <article class="stat-card">
+                        <div class="stat-top"><span class="stat-label">Valeur totale</span><span class="stat-icon icon-mint" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none"><path d="M12 3v18m5-14.5C17 5.1 15 4 12.3 4 9.5 4 7.5 5.4 7.5 7.5S9.4 11 12 11s4.5 1.4 4.5 3.5-2 4-4.8 4c-2.7 0-4.7-1.1-4.7-2.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+                        </span></div>
+                        <div class="stat-value" id="total-value">—</div>
+                        <div class="stat-foot"><span class="stat-foot-dot mint-dot"></span> Somme des prix affichés</div>
+                    </article>
+                    <article class="stat-card">
+                        <div class="stat-top"><span class="stat-label">Prix moyen</span><span class="stat-icon icon-amber" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none"><path d="M4 18.5 9 13l3.5 3.5L20 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M14.5 8H20v5.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </span></div>
+                        <div class="stat-value" id="average-price">—</div>
+                        <div class="stat-foot"><span class="stat-foot-dot amber-dot"></span> Par article</div>
+                    </article>
+                </div>
 
-    <script src="script.js"></script>
+                <section class="catalog-card" aria-labelledby="catalog-title">
+                    <div class="catalog-header">
+                        <div>
+                            <h2 id="catalog-title">Tous les articles <span class="title-count" id="visible-count">—</span></h2>
+                            <p>Consultez et retrouvez rapidement vos articles.</p>
+                        </div>
+                        <label class="search-box">
+                            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8" stroke="currentColor" stroke-width="1.8"/><path d="m16 16 4.2 4.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                            <input id="search" type="search" placeholder="Rechercher un article…" autocomplete="off" aria-label="Rechercher un article">
+                            <kbd>/</kbd>
+                        </label>
+                    </div>
+
+                    <div class="table-wrap">
+                        <table>
+                            <caption class="sr-only">Liste des articles du catalogue et leurs prix</caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col">ARTICLE</th>
+                                    <th scope="col">PRIX</th>
+                                    <th scope="col"><span class="sr-only">Détail</span></th>
+                                </tr>
+                            </thead>
+                            <tbody id="items-list">
+                                <tr><td colspan="3" class="loading-cell"><span class="spinner" aria-hidden="true"></span> Chargement du catalogue…</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="catalog-footer">
+                        <span id="results-label">Chargement des articles…</span>
+                        <button class="refresh-button" id="refresh" type="button">
+                            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 7v5h-5M4.7 9a7.5 7.5 0 0 1 12.7-2L20 12M4 17v-5h5m10.3 3a7.5 7.5 0 0 1-12.7 2L4 12" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            Actualiser
+                        </button>
+                    </div>
+                </section>
+                <footer class="page-footer">Fait avec soin <span aria-label="amour">♥</span> pour votre activité.</footer>
+            </section>
+        </main>
+    </div>
+
+    <dialog class="item-dialog" id="item-dialog" aria-labelledby="dialog-title">
+        <form id="item-form" novalidate>
+            <div class="dialog-heading">
+                <div class="dialog-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                </div>
+                <button class="dialog-close" id="close-form" type="button" aria-label="Fermer">×</button>
+                <h2 id="dialog-title">Ajouter un article</h2>
+                <p>Renseignez les informations de votre nouvel article.</p>
+            </div>
+            <label class="field-label" for="item-name">Nom de l’article</label>
+            <input class="form-input" id="item-name" name="name" type="text" maxlength="120" placeholder="Ex. Lampe de bureau" required>
+            <label class="field-label" for="item-price">Prix</label>
+            <div class="price-input">
+                <input class="form-input" id="item-price" name="price" type="number" min="0" step="0.01" placeholder="0,00" required>
+            </div>
+            <p class="form-error" id="form-error" role="alert" hidden></p>
+            <div class="dialog-actions">
+                <button class="button button-secondary" id="cancel-form" type="button">Annuler</button>
+                <button class="button button-primary" id="submit-form" type="submit">Ajouter l’article</button>
+            </div>
+        </form>
+    </dialog>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="index.js" defer></script>
 </body>
 </html>
